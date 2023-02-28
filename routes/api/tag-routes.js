@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { TableHints } = require("sequelize/types");
+// const { TableHints } = require("sequelize/types");
 const { Tag, Product, ProductTag } = require("../../models");
 
 const tR = router;
@@ -86,7 +86,7 @@ res.status(200).json(dbTags);
 tR.delete("/:id", async (req, res) => {
   // delete on tag by its `id` value
   try {
-        dbProduct = await ProductTag.destroy(
+        const dbProd = await ProductTag.destroy(
           {
             where: { tag_id: req.params.id, message: "deleting" },
           }
