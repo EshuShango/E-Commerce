@@ -16,7 +16,7 @@ tR.get("/", async (req, res) => {
         },
       ],
     });
-    res.json(dbTags);
+    
     res.status(200).json(dbTags);
   } catch (err) {
     console.log(err);
@@ -42,6 +42,7 @@ tR.get("/:id", async (req, res) => {
       });
       return;
     }
+    res.status(200).json(dbTags);
   } catch (error) {
     console.log(err);
     res.status(500).json(err);
@@ -51,9 +52,9 @@ tR.get("/:id", async (req, res) => {
 tR.post("/", async (req, res) => {
   // create a new tag
   try {
-    const dbTags = await Tag.create(req.body);
-    res.json(dbTags);
-    res.status(201);
+    const createTag = await Tag.create(req.body);
+    
+    res.status(201).json(createTag);
   } catch (error) {
     console.log(err);
     res.status(500);
@@ -74,7 +75,6 @@ if (!dbTags) {
   return;
 }
 res.status(200).json(dbTags);
-
 } catch (error) {
   console.log(err);
   res.status(500);
@@ -88,7 +88,7 @@ tR.delete("/:id", async (req, res) => {
   try {
         const dbProd = await ProductTag.destroy(
           {
-            where: { tag_id: req.params.id, message: "deleting" },
+            where: { tag_id: req.params.id }
           }
         );
         const dbTags = await Tag.destroy({
@@ -100,6 +100,7 @@ tR.delete("/:id", async (req, res) => {
           res.status(404).json({ message: "Sorry, with that id !" });
           return;
         }
+        res.status(200).json(dbTags);
       } catch (error) {
         console.log(err);
         res.status(500).json(err);

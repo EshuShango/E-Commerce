@@ -3,12 +3,10 @@ const categoryRoutes = require('./category-routes');
 const productRoutes = require('./product-routes');
 const tagRoutes = require('./tag-routes');
 
-const apiR = router;
+router.use('/categories', categoryRoutes);
+router.use('/products', productRoutes);
+router.use('/tags', tagRoutes);
 
-apiR.use('/categories', categoryRoutes);
-apiR.use('/products', productRoutes);
-apiR.use('/tags', tagRoutes);
-
-module.exports = apiR;
+module.exports = router;
 
 
