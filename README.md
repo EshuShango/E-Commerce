@@ -13,7 +13,7 @@ Internet retail, also known as **e-commerce**, is the largest sector of the elec
 ## Links
 
 - The repo of the note app: [Source Code]()
-- Here is the link of live demo [Walkthrough video]()
+- Here is the link of live demo [Walkthrough video](https://drive.google.com/file/d/1-FVdgZrld4o1lmufHmY2znrO8eXwPy2Q/view)
 
 
 ## Description 🔎
@@ -47,14 +47,14 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## Mock-Up 
 
-![mock up]()
+![mock up](../E-Commerce/Assets/Screenshot%202023-03-10%20at%2004.38.25%20(2)%20Small.png)
 
 
 ## Things I Learned (still learning) 📚
 
 * `Better understanding of Express routing !!!`
 * `Utilize template code DRY`
-* ``
+* `My SQL`
 
 
 ## RoadMap 🧭 

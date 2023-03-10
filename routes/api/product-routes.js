@@ -20,7 +20,7 @@ ptR.get('/', async (req, res) => {
         },
       ],
     });
-    res.json(dbProd);
+    // res.json(dbProd);
     res.status(200).json(dbProd);
   } catch (err) {
     console.log(err);
@@ -66,8 +66,9 @@ ptR.post('/', async (req, res) => {
   try {
     const dbProd = await Product.create(req.body);
 
-    if (req.body.tag_ids.length) {
-      const prodTagIdArr = req.body.tag_ids.map((tag_id) => {
+    if (req.body.tag_id) {
+      console.log('HEYYYYYYY');
+      const prodTagIdArr = req.body.tag_id.map((tag_id) => {
         return {
           product_id: product.id,
           tag_id,
@@ -158,7 +159,7 @@ ptR.delete('/:id', async (req, res) => {
       res.status(404).json({ message: "No product found with this id" });
       return;
     }
-    
+    res.status(200).json({ message:"Hey your doing great !" });
   } catch (error) {
     console.log(err);
     res.status(500).json(err);
